@@ -2,6 +2,8 @@
 
 本项目提供一套完整的构建脚本和工具链配置，用于在 macOS 系统上交叉编译 x265 编码器库，生成适用于移动平台（Android、iOS、OHOS）的动态链接库（.so, .dylib, .so）。
 
+> [x265 offical readme](https://github.com/ryan-yuan-dev/x265-mobil-crosscompile/blob/master/readme.rst)
+
 ## 📱 支持的平台
 
 - Android 支持多种 ABI：armeabi-v7a, arm64-v8a, x86_64, x86
