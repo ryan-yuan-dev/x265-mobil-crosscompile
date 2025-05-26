@@ -192,7 +192,8 @@ build() {
     -DOHOS_ARCH="$ARCH_ABI" \
     -DCMAKE_POSITION_INDEPENDENT_CODE="ON" \
     -DOHOS_STL="c++_shared" \
-    -DENABLE_ASSEMBLY="OFF"
+    -DENABLE_ASSEMBLY="OFF" \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
   ninja -C "$FLAVOR_BUILD_DIR" clean
   ninja -C "$FLAVOR_BUILD_DIR" all -j"$(nproc)" --verbose
   ninja -C "$FLAVOR_BUILD_DIR" install
