@@ -765,6 +765,10 @@ if(ENABLE_SHARED)
         add_library(x265-shared SHARED "${PROJECT_BINARY_DIR}/x265.def" ${ASM_OBJS}
                    ${X265_RC_FILE} $<TARGET_OBJECTS:encoder> $<TARGET_OBJECTS:common>)
     endif()
+
+    set_target_properties(x265-shared PROPERTIES
+        NO_SONAME 1
+    )
     if(EXTRA_LIB)
         target_link_libraries(x265-shared ${EXTRA_LIB})
     endif()
