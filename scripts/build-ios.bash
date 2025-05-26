@@ -170,12 +170,13 @@ build() {
     -DEXPORT_C_API=1 \
     -DENABLE_ASSEMBLY=0 \
     -DENABLE_CLI=0 \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
     -DENABLE_VISIBILITY="ON"
   # cmake --build "${FLAVOR_BUILD_DIR}" --config Release -v
   # cd "${FLAVOR_BUILD_DIR}" && xcodebuild -scheme ALL_BUILD -configuration Release build
   # cmake --install "${FLAVOR_BUILD_DIR}" --config Release
   ninja -C "$FLAVOR_BUILD_DIR" clean
-  ninja -C "$FLAVOR_BUILD_DIR" all -j"$(nproc)" --config Release
+  ninja -C "$FLAVOR_BUILD_DIR" all -j"$(nproc)"
   ninja -C "$FLAVOR_BUILD_DIR" install
 }
 
